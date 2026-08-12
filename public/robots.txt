@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+
+Allow: /
+Allow: /login
+Allow: /register
+
+Sitemap: https://submita.biopark.com.br/sitemap.xml

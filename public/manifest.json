@@ -1,0 +1,99 @@
+{
+  "name": "SARA - Donaduzzi",
+  "short_name": "SARA",
+  "description": "Sistema de Avaliação e Revisão de Artigos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#541822",
+  "theme_color": "#541822",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/faculdade-donaduzzi-removebg.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Acessar dashboard principal",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/images/faculdade-donaduzzi-removebg.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Submeter Artigo",
+      "short_name": "Submeter",
+      "description": "Submeter novo artigo",
+      "url": "/submeter-artigo",
+      "icons": [
+        {
+          "src": "/images/faculdade-donaduzzi-removebg.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Eventos",
+      "short_name": "Eventos",
+      "description": "Ver eventos disponíveis",
+      "url": "/eventos",
+      "icons": [
+        {
+          "src": "/images/faculdade-donaduzzi-removebg.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "categories": ["education", "productivity", "utilities"]
+}

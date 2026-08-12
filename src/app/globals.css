@@ -1,0 +1,533 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 352 55% 21%; /* #541822 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 352 30% 96%;
+    --secondary-foreground: 352 55% 21%;
+    --muted: 352 30% 96%;
+    --muted-foreground: 352 10% 46.9%;
+    --accent: 352 30% 96%;
+    --accent-foreground: 352 55% 21%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 352 30% 91.4%;
+    --input: 352 30% 91.4%;
+    --ring: 352 55% 21%;
+    --radius: 0.5rem;
+
+    /* ✅ NOVAS VARIÁVEIS PARA GRADIENTES SARA - Cor Principal #541822 */
+    --ia360-gradient-primary: linear-gradient(
+      135deg,
+      #541822 0%,
+      #7a2630 50%,
+      #9e3a47 100%
+    );
+    --ia360-gradient-secondary: linear-gradient(
+      135deg,
+      #541822 0%,
+      #6b1f28 50%,
+      #8b2d37 100%
+    );
+    --ia360-gradient-accent: linear-gradient(
+      135deg,
+      #541822 0%,
+      #7a2630 50%,
+      #a0404d 100%
+    );
+    --ia360-gradient-cool: linear-gradient(
+      135deg,
+      #3d1219 0%,
+      #541822 50%,
+      #7a2630 100%
+    );
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ✅ GRADIENTES PRINCIPAIS INSPIRADOS NA IA360 */
+@layer components {
+  .submita-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .submita-card {
+    @apply bg-white rounded-lg shadow-md border border-gray-200;
+  }
+
+  /* ✅ GRADIENTE PRINCIPAL ATUALIZADO */
+  .submita-gradient {
+    background: var(--ia360-gradient-primary);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* ✅ NOVOS GRADIENTES BASEADOS NAS IMAGENS */
+  .ia360-gradient-primary {
+    background: var(--ia360-gradient-primary);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .ia360-gradient-secondary {
+    background: var(--ia360-gradient-secondary);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .ia360-gradient-accent {
+    background: var(--ia360-gradient-accent);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .ia360-gradient-cool {
+    background: var(--ia360-gradient-cool);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  /* ✅ BOTÕES COM GRADIENTES MODERNOS */
+  .btn-gradient-primary {
+    background: var(--ia360-gradient-primary);
+    background-size: 200% 200%;
+    @apply text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .btn-gradient-secondary {
+    background: var(--ia360-gradient-secondary);
+    background-size: 200% 200%;
+    @apply text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .btn-gradient-accent {
+    background: var(--ia360-gradient-accent);
+    background-size: 200% 200%;
+    @apply text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  /* ✅ BADGES E STATUS COM GRADIENTES - Tons da Cor Principal #541822 */
+  .submita-status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-submitted {
+    background: linear-gradient(135deg, #541822 0%, #7a2630 100%);
+    @apply text-white;
+  }
+
+  .status-review {
+    background: linear-gradient(135deg, #8b2d37 0%, #a0404d 100%);
+    @apply text-white;
+  }
+
+  .status-approved {
+    background: linear-gradient(135deg, #3d1219 0%, #541822 100%);
+    @apply text-white;
+  }
+
+  .status-rejected {
+    background: linear-gradient(135deg, #2d0d12 0%, #541822 100%);
+    @apply text-white;
+  }
+
+  .status-corrections {
+    background: linear-gradient(135deg, #6b1f28 0%, #8b2d37 100%);
+    @apply text-white;
+  }
+
+  /* ✅ CARDS COM BORDAS GRADIENTES */
+  .gradient-border-card {
+    @apply bg-white rounded-lg shadow-md p-1;
+    background: var(--ia360-gradient-primary);
+  }
+
+  .gradient-border-card::before {
+    content: "";
+    @apply absolute inset-1 bg-white rounded-lg;
+    z-index: -1;
+  }
+
+  /* ✅ HEADERS E TÍTULOS COM GRADIENTES */
+  .gradient-text {
+    background: var(--ia360-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .gradient-text-cool {
+    background: var(--ia360-gradient-cool);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  /* ✅ LOADER/SPINNER COM GRADIENTE - Cor Principal #541822 */
+  .gradient-spinner {
+    @apply w-8 h-8 rounded-full;
+    background: conic-gradient(
+      from 0deg,
+      #541822,
+      #7a2630,
+      #9e3a47,
+      #7a2630,
+      #541822
+    );
+    animation: spin 1s linear infinite;
+  }
+
+  .gradient-spinner::before {
+    content: "";
+    @apply absolute inset-1 bg-white rounded-full;
+  }
+}
+
+/* ✅ ANIMAÇÕES PARA OS GRADIENTES */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ✅ SCROLLBAR COM GRADIENTE */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ia360-gradient-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ia360-gradient-primary);
+}
+
+/* ✅ COMPONENTES RADIX COM MELHOR VISUAL */
+[data-radix-dialog-content] {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-radix-select-content] {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 9999 !important;
+}
+
+[data-radix-select-item] {
+  background-color: white !important;
+}
+
+[data-radix-select-viewport] {
+  background-color: white !important;
+}
+
+[data-radix-select-item]:hover,
+[data-radix-select-item][data-highlighted] {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  color: #111827 !important;
+}
+
+[data-radix-select-item][data-state="checked"] {
+  background: var(--ia360-gradient-secondary) !important;
+  color: white !important;
+}
+
+[data-radix-dropdown-menu-content] {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 9999 !important;
+}
+
+[data-radix-dropdown-menu-item]:hover,
+[data-radix-dropdown-menu-item][data-highlighted] {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  color: #111827 !important;
+}
+
+/* ✅ INPUTS E FORMS COM ESTILO MODERNO */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  background-color: white !important;
+  border-color: #d1d5db !important;
+  transition: all 0.3s ease;
+}
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button[role="combobox"]:focus,
+  [data-slot="select-trigger"]:focus,
+  button[data-state]:focus {
+    border-color: #541822 !important;
+    background-color: white !important;
+    box-shadow: 0 0 0 1px rgba(84, 24, 34, 0.2) !important;
+    outline: none !important;
+  }
+
+/* ✅ TOGGLES E SWITCHES MODERNOS */
+[data-state="checked"].switch-required {
+  background: var(--ia360-gradient-accent) !important;
+}
+
+[data-state="unchecked"].switch-optional {
+  background: var(--ia360-gradient-primary) !important;
+}
+
+/* ✅ INDICADORES DE STATUS MELHORADOS */
+.status-indicator.required {
+  background: var(--ia360-gradient-accent);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.status-indicator.optional {
+  background: var(--ia360-gradient-primary);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+  /* ✅ CARDS COM HOVER GRADIENTE - Cor Principal #541822 */
+  .question-card:hover {
+    box-shadow: 0 8px 25px -8px rgba(84, 24, 34, 0.3);
+    transform: translateY(-2px);
+    border: 1px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+      var(--ia360-gradient-secondary) border-box;
+  }
+
+  /* ✅ PREVIEW BOX MODERNIZADO - Cor Principal #541822 */
+  .question-preview {
+    background: linear-gradient(
+      135deg,
+      rgba(84, 24, 34, 0.1) 0%,
+      rgba(122, 38, 48, 0.05) 100%
+    );
+    border: 1px solid rgba(84, 24, 34, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+.gradient-bg-primary {
+  background: var(--ia360-gradient-primary);
+}
+
+.gradient-bg-secondary {
+  background: var(--ia360-gradient-secondary);
+}
+
+.gradient-bg-accent {
+  background: var(--ia360-gradient-accent);
+}
+
+.gradient-bg-cool {
+  background: var(--ia360-gradient-cool);
+}
+
+/* ✅ HOVER EFFECTS ESPECIAIS */
+.hover-gradient-primary:hover {
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+/* ✅ HOVER EFFECTS ESPECIAIS - Cor Principal #541822 */
+.hover-gradient-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(84, 24, 34, 0.4);
+}
+/* ✅ ADICIONE ESSAS CLASSES AO SEU globals.css */
+
+.gradient-icon {
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-mask: var(--icon-mask);
+  mask: var(--icon-mask);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* 2. MÉTODO MAIS SIMPLES - USANDO FILTER */
+.gradient-icon-simple {
+  filter: hue-rotate(0deg) saturate(2) brightness(1.2);
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 3. ÍCONES COM STROKE GRADIENTE */
+.gradient-stroke-icon {
+  stroke: url(#gradient-stroke);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* 4. CONTAINER COM GRADIENTE PARA ÍCONES */
+.icon-gradient-container {
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-mask: radial-gradient(circle, transparent 30%, black 30%),
+    linear-gradient(black, black);
+  mask: radial-gradient(circle, transparent 30%, black 30%),
+    linear-gradient(black, black);
+  -webkit-mask-composite: subtract;
+  mask-composite: subtract;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.icon-gradient-container svg {
+  color: white;
+  background: var(--ia360-gradient-primary);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* 5. MÉTODO SVG INLINE COM GRADIENTE */
+.svg-gradient-icon {
+  background: linear-gradient(45deg, #541822, #7a2630, #9e3a47, #541822);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-mask-image: var(--svg-icon);
+  mask-image: var(--svg-icon);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* 6. ÍCONE COM FUNDO GRADIENTE E PADDING */
+.gradient-icon-bg {
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  border-radius: 6px;
+  padding: 6px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 7. HOVER EFFECT PARA ÍCONES */
+.icon-hover-gradient {
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.icon-hover-gradient:hover {
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: scale(1.1);
+}
+
+/* 8. GRADIENTE PARA ÍCONES ESPECÍFICOS - Cor Principal #541822 */
+.arrow-gradient {
+  background: linear-gradient(
+    45deg,
+    #541822 0%,
+    #7a2630 25%,
+    #9e3a47 50%,
+    #541822 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* 9. MÉTODO USANDO PSEUDO-ELEMENTOS */
+.gradient-icon-pseudo {
+  position: relative;
+  color: transparent;
+}
+
+.gradient-icon-pseudo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--ia360-gradient-primary);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-mask: inherit;
+  mask: inherit;
+}

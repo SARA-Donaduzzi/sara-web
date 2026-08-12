@@ -1,0 +1,12 @@
+services:
+  # ─── Frontend Next.js (imagem pré-buildada no GHCR) ──────────────────────
+  web:
+    image: ghcr.io/sara-donaduzzi/sara-web:latest
+    container_name: sara_web
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    restart: unless-stopped
